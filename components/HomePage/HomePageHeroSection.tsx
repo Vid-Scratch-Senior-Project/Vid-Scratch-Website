@@ -1,6 +1,11 @@
 export default function HomePageHeroSection() {
     return (
-        <div>
+        <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}>
             <div>
                 Welcome to Vid-Scratch
             </div>

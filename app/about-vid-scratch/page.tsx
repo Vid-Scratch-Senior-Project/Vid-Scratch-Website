@@ -6,7 +6,11 @@ export default function AboutVidScratchPage() {
   return (
     <div>
       <AboutUsPageHeader />
-      <div>
+      <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between'
+      }}>
         <AboutUsPageContent />
         <AboutUsPageTeamMember />
       </div>
