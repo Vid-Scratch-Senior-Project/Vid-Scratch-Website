@@ -1,4 +1,9 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 export default function HomePageHeroSection() {
+    const router = useRouter();
+
     return (
         <div
             style={{
@@ -62,7 +67,8 @@ export default function HomePageHeroSection() {
                         borderRadius: '50px',
                         padding: 30,
                         boxShadow: '0px 0px 5px var(--secondary-text-color)'
-                    }}>
+                    }}
+                    onClick={() => router.push('/demo')}>
                     Upload Your Video
                 </button>
                 <button className="btn btn-outline"
