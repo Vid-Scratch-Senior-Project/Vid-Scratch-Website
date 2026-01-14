@@ -87,3 +87,18 @@ main {
   flex-shrink: 0;
   flex: 0 0 auto;
 }
+
+.gradient-text-home-hero {
+  background: linear-gradient(90deg, var(--tertiary-text-color) 0% 7%, var(--quaternary-text-color) 96% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.radial-gradient-text-home-hero {
+  background: radial-gradient(circle, #FFFFFF 0% 30%, #FFFFFF50 85% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
