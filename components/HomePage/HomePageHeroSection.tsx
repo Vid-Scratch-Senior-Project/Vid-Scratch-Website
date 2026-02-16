@@ -1,5 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
+import { RiPlayFill } from '@remixicon/react'
 
 export default function HomePageHeroSection() {
     const router = useRouter();
@@ -77,6 +78,7 @@ export default function HomePageHeroSection() {
                         borderRadius: '50px',
                         padding: 30,
                     }}>
+                        <RiPlayFill />
                     See How It Works
                 </button>
             </div>
