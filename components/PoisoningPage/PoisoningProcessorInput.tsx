@@ -1,10 +1,10 @@
 'use client'
 
 import detectMediaType from "@/utils/detectMediaType";
+import React from "react";
 import { useRef, useState } from "react";
 
-export default function PoisoningProcessorInput() {
-    const [filename, setFilename] = useState('');
+export default function PoisoningProcessorInput({filename, setFilename}: {filename: string, setFilename: (filename: string) => void}) {
     const [error, setError] = useState('');
     const [isUploading, setIsUploading] = useState(false);
     const hiddenFileInput = useRef<HTMLInputElement>(null);
@@ -79,13 +79,7 @@ export default function PoisoningProcessorInput() {
     };
 
     return (
-        <div
-        style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.3rem',
-        }}>
+        <React.Fragment>
             <div className="text-lg font-semibold"
             style={{
                 backgroundColor: 'var(--box-primary-color)',
@@ -135,6 +129,6 @@ export default function PoisoningProcessorInput() {
                     )}
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }

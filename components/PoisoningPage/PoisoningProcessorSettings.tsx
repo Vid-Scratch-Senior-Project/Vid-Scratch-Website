@@ -1,20 +1,10 @@
-'use client'
 
-import { useState } from "react";
+import React from "react";
 
-export default function PoisoningProcessorSettings() {
-    const [intensity, setIntensity] = useState(25);
-    const [quality, setQuality] = useState(25);
-
+export default function PoisoningProcessorSettings({intensity, quality, setIntensity, setQuality} : {intensity: number, quality: number, setIntensity: (value: number) => void, setQuality: (value: number) => void}) {
 
     return (
-        <div
-            style={{
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.3rem',
-            }}>
+        <React.Fragment>
             <div className="text-lg font-semibold"
                 style={{
                     backgroundColor: 'var(--box-primary-color)',
@@ -44,7 +34,7 @@ export default function PoisoningProcessorSettings() {
                 <div className="w-full p-2">
                     <input type="range" min={0} max="100" value={intensity}
                         onChange={(e) => setIntensity(parseInt(e.target.value))}
-                        className="w-full range [--range-fill:0]" step="25" />
+                        step="25" className="w-full range range-primary [--range-bg:#5c98e22f]" />
                     <div className="flex justify-between px-2.5 mt-2 text-xs">
                         <span className="text-center w-[20px] -ml-2">Very Low</span>
                         <span className="text-center w-[20px]">Low</span>
@@ -63,8 +53,8 @@ export default function PoisoningProcessorSettings() {
                     style={{
                         fontSize: '1.4rem'
                     }}>
-                Render Quality
-                    </div>
+                    Render Quality
+                </div>
                 <div
                     style={{
                         fontSize: '0.8rem',
@@ -75,7 +65,7 @@ export default function PoisoningProcessorSettings() {
                 <div className="w-full p-2">
                     <input type="range" min={0} max="100" value={quality}
                         onChange={(e) => setQuality(parseInt(e.target.value))}
-                        className="w-full range [--range-fill:0]" step="25" />
+                        className="w-full range range-primary [--range-bg:#5c98e22f]" step="25" />
                     <div className="flex justify-between px-2.5 mt-2 text-xs">
                         <span className="text-center w-[25px] -ml-2">Low</span>
                         <span className="text-center w-[50px]">Medium</span>
@@ -83,6 +73,6 @@ export default function PoisoningProcessorSettings() {
                     </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }

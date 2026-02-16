@@ -1,20 +1,20 @@
 'use client'
 
-import { RiDownloadLine, RiFolder5Fill, RiFolderFill } from "@remixicon/react";
+import { RiDownloadLine } from "@remixicon/react";
+import React from "react";
 
-export default function PoisoningProcessorOutput() {
+export default function PoisoningProcessorOutput({videoUrl, poisonedVideoUrl, setPoisonedVideoUrl}: {videoUrl: string ,poisonedVideoUrl: string, setPoisonedVideoUrl: (url: string) => void}) {
     const handleDownload = () => {
-        // Your download logic here
+        // Download logic
         console.log('Download initiated');
     };
+    const handlePoisoning = () => {
+        // Initiate poisoning process
+        // generateIDHash_datetime_Filename.mp4
+        setPoisonedVideoUrl("/poisoned_" + videoUrl);
+    };
     return (
-        <div
-            style={{
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.3rem',
-            }}>
+        <React.Fragment>
             <div className="text-lg font-semibold"
                 style={{
                     backgroundColor: 'var(--box-primary-color)',
@@ -27,11 +27,12 @@ export default function PoisoningProcessorOutput() {
                 style={{
                     backgroundColor: 'var(--box-secondary-color)',
                     width: '100%',
+                    height: '100%',
                 }}>
                 <div className="flex justify-between p-4">
                     <div className="flex items-center gap-2">
                         <button className="btn px-4 py-2 gradient-btn-start-processing"
-                            onClick={handleDownload}
+                            onClick={handlePoisoning}
                             style={{
                                 borderColor: 'var(--senary-text-color)',
                                 borderRadius: '50px',
@@ -56,6 +57,6 @@ export default function PoisoningProcessorOutput() {
                     </button>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
