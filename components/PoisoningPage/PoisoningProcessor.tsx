@@ -21,15 +21,6 @@ export default function PoisoningProcessor() {
             }}>
             <div
                 style={{
-                    fontSize: '2rem',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    padding: '1rem',
-                }}>
-                Demo
-            </div>
-            <div
-                style={{
                     display: 'flex',
                     gap: '0.3rem',
                     justifyContent: 'space-between',

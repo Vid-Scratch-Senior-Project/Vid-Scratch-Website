@@ -1,3 +1,6 @@
+import Link from "next/link";
+import CookiePreferences from "./CookiePreferences";
+
 export default function StickyFooter() {
     return (
         <div className="sticky-footer">
@@ -14,15 +17,17 @@ export default function StickyFooter() {
                         display: 'flex',
                         gap: 20
                     }}>
-                    <div>
-                        Terms of Service
-                    </div>
-                    <div>
-                        Privacy Policy
-                    </div>
-                    <div>
-                        Cookies
-                    </div>
+                    <Link href="/terms-of-service" >
+                        <div>
+                            Terms of Service
+                        </div>
+                    </Link>
+                    <Link href="/privacy" >
+                        <div>
+                            Privacy Policy
+                        </div>
+                    </Link>
+                    <CookiePreferences/>
                 </div>
             </div>
         </div>
