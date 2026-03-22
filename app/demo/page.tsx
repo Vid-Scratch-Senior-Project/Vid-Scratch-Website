@@ -1,4 +1,4 @@
-import PoisoningProcessor from "@/components/PoisoningPage/PoisoningProcessor";
+import SimpleEmblaCarousalThumbnail from "@/components/ThumbnailCarousal/SimpleEmblaCarousalThumbnail"
 
 export default function PoisoningPage() {
   // in case we want to show statistics after a video was poisoned
@@ -14,9 +14,7 @@ export default function PoisoningPage() {
         <div>
           poisoned
         </div>
-        <div>
-          
-        </div>
+        <SimpleEmblaCarousalThumbnail/>
       </div>
 
     </div>
