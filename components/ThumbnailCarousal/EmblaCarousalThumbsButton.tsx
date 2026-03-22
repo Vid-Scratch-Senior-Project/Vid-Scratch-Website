@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getVideoFirstFrame } from '@/lib/getVideoFirstFrame'
 
 type PropType = {
     selected: boolean
@@ -8,6 +9,10 @@ type PropType = {
 
 export const Thumb = (props: PropType) => {
     const { selected, index, onClick } = props
+    const [thumb, setThumb] = useState<string | null>(null)
+    const src = `/demo/clean/${index + 1}.mp4`
+
+    useEffect(() => { getVideoFirstFrame(src).then(setThumb) }, [src])
 
     return (
         <div
@@ -20,7 +25,11 @@ export const Thumb = (props: PropType) => {
                 type="button"
                 className="embla-thumbs__slide__number"
             >
-                {index + 1}
+                {thumb ? (
+                    <img src={thumb} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+                ) : (
+                    <div className="w-full h-full bg-gray-200 animate-pulse" />
+                )}
             </button>
         </div>
     )

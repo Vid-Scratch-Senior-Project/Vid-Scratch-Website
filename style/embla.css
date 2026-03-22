@@ -2,7 +2,7 @@
   max-width: 48rem;
   margin: auto;
 
-  --slide-height: 19rem;
+  --slide-height: 70vh;
   --slide-spacing: 1rem;
   --slide-size: 100%;
 }
@@ -15,12 +15,17 @@
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
+  padding-top: 15px
 }
 
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
+  height: var(--slide-height);
+  display: flex;
+  justify-content: center;
+  gap: 3rem
 }
 
 .embla__slide__number {

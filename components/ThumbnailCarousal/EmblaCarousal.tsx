@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Thumb } from './EmblaCarousalThumbsButton'
+import VideoCard from '../VideoCard'
 
 type PropType = {
     slides: number[]
@@ -40,16 +41,6 @@ const EmblaCarousel = (props: PropType) => {
 
     return (
         <div className="embla">
-            <div className="embla__viewport" ref={emblaMainRef}>
-                <div className="embla__container">
-                    {slides.map((index) => (
-                        <div className="embla__slide" key={index}>
-                            <div className="embla__slide__number">{index + 1}</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
             <div className="embla-thumbs">
                 <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
                     <div className="embla-thumbs__container">
@@ -64,6 +55,19 @@ const EmblaCarousel = (props: PropType) => {
                     </div>
                 </div>
             </div>
+            
+            <div className="embla__viewport" ref={emblaMainRef}>
+                <div className="embla__container">
+                    {slides.map((index) => (
+                        <div className="embla__slide" key={index}>
+                                <VideoCard/>
+                                <VideoCard/>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            
         </div>
     )
 }
